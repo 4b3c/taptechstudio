@@ -6,187 +6,427 @@
   <title>TapTech — Custom NFC Keychains</title>
   <meta name="description" content="Custom NFC keychains for student clubs and events. Tap-to-link merch with your logo." />
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --accent: #6d28d9;
+      --accent-light: #ede9fe;
+      --accent2: #0891b2;
+      --text: #111;
+      --muted: #666;
+      --border: #e5e7eb;
+      --surface: #fafafa;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    ::selection {
+      background: #c4b5fd;
+      color: #1e0a4a;
+    }
+    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
-      color: #111;
-      background: #ffffff;
-      line-height: 1.5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.6;
     }
-
-    a { color: #111; text-decoration: underline; text-underline-offset: 2px; }
 
     .container {
-      max-width: 960px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 32px 20px 64px;
+      padding: 32px 24px 80px;
     }
 
+    /* ── Header ── */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 48px;
+      margin-bottom: 72px;
       flex-wrap: wrap;
       gap: 12px;
     }
 
     .brand {
-      font-weight: 700;
-      font-size: 18px;
+      font-weight: 800;
+      font-size: 20px;
       text-decoration: none;
+      color: var(--accent);
+      letter-spacing: -0.5px;
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px 0;
-    }
+    nav { display: flex; flex-wrap: wrap; }
 
     nav a {
       margin-left: 20px;
-      font-size: 14px;
-      color: #555;
+      font-size: 13px;
+      color: var(--muted);
       text-decoration: none;
-      white-space: nowrap;
+      transition: color 0.15s;
     }
 
-    nav a:hover { color: #000; text-decoration: underline; }
+    nav a:hover { color: var(--text); }
 
+    /* ── Hero ── */
     .hero {
-      max-width: 760px;
-      margin-bottom: 32px;
+      max-width: 680px;
+      margin-bottom: 72px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 20px;
+      height: 1.5px;
+      background: var(--accent);
     }
 
     h1 {
-      font-size: 40px;
-      line-height: 1.15;
-      margin: 0 0 16px;
-      font-weight: 700;
+      font-size: 52px;
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+      color: #0f0f0f;
     }
 
     .subtitle {
-      font-size: 18px;
-      color: #444;
-      margin: 0 0 10px;
+      font-size: 17px;
+      color: #555;
+      margin-bottom: 12px;
+      max-width: 520px;
     }
 
     .subnote {
-      font-size: 14px;
-      color: #666;
-      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
     }
 
-    section { margin-bottom: 56px; }
+    .subnote strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ── Sections ── */
+    section { margin-bottom: 72px; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
 
     h2 {
-      font-size: 24px;
-      margin-bottom: 16px;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
+    .section-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 18px;
     }
 
-    .card {
-      border: 1px solid #ddd;
-      padding: 18px;
-      background: #fff;
+    /* ── Video ── */
+    .video-wrap {
+      border: 1px solid var(--border);
+      padding: 10px;
+      background: var(--surface);
+      border-radius: 10px;
     }
 
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
     }
 
-    .card p {
-      margin: 0;
-      font-size: 14px;
-      color: #555;
-    }
-
-    /* Gallery */
+    /* ── Gallery ── */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 14px;
+      gap: 14px;
     }
 
     .shot {
-      border: 1px solid #ddd;
-      padding: 10px;
       background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .shot a { text-decoration: none; }
+    .shot:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    }
+
+    /* Linked shots get a subtle tint to signal they're clickable */
+    .shot.is-link {
+      border-color: #c4b5fd;
+      background: #faf8ff;
+    }
+
+    .shot.is-link:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px rgba(109,40,217,0.12);
+    }
+
+    .shot a { text-decoration: none; display: block; }
 
     .shot img {
       width: 100%;
-      height: 220px;
+      height: 200px;
       object-fit: cover;
       display: block;
     }
 
     .caption {
-      margin-top: 8px;
-      font-size: 13px;
-      color: #666;
+      padding: 9px 12px;
+      font-size: 12px;
+      color: var(--muted);
     }
 
-    .section-note {
-      font-size: 13px;
-      color: #888;
-      margin: 0 0 14px;
+    .caption a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    /* Pricing table */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 16px;
+    .caption a:hover { text-decoration: underline; }
+
+    /* ── Process ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+      margin-top: 6px;
     }
 
-    th, td {
-      border-bottom: 1px solid #ddd;
-      padding: 12px 8px;
-      text-align: left;
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: calc(12.5%);
+      right: calc(12.5%);
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      border: 1.5px solid #c4b5fd;
+      color: var(--accent);
       font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
     }
 
-    th {
-      color: #666;
+    .step-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .step-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 680px) {
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .steps::before { display: none; }
+    }
+
+    /* ── Use cases ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .card:hover { border-color: #c4b5fd; transform: translateY(-3px); }
+    .card:hover::before { opacity: 1; }
+
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── Pricing ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .price-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 20px;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      border-color: var(--accent);
+      background: #faf8ff;
+    }
+
+    .price-card.featured::after {
+      content: 'Most popular';
+      position: absolute;
+      top: 11px; right: 11px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    .price-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px rgba(109,40,217,0.1);
+    }
+
+    .price-qty {
+      font-size: 12px;
+      color: var(--muted);
       font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
     }
 
+    .price-amount {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #0f0f0f;
+    }
+
+    .price-unit {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .price-note {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── Footer ── */
     footer {
-      border-top: 1px solid #ddd;
-      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
       font-size: 14px;
-      color: #555;
+      color: var(--muted);
     }
 
-    .email {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      color: #111;
+    footer strong { color: var(--text); }
+
+    .email a {
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, monospace;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
     }
 
-    .video-wrap { border: 1px solid #ddd; padding: 10px; background: #fff; }
-    video { width: 100%; height: auto; display: block; }
+    .email a:hover { text-decoration: underline; }
 
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── Responsive ── */
     @media (max-width: 800px) {
+      h1 { font-size: 38px; }
+
       .gallery {
         display: flex;
-        flex-direction: row;
         overflow-x: auto;
         gap: 12px;
         scroll-snap-type: x mandatory;
@@ -200,11 +440,13 @@
         scroll-snap-align: start;
       }
 
-      .shot img { height: 200px; }
+      .shot img { height: 180px; }
+
+      .pricing-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 28px; }
+      h1 { font-size: 30px; }
       nav a { margin-left: 14px; font-size: 13px; }
     }
   </style>
@@ -214,9 +456,12 @@
   <div class="container">
 
     <header>
-      <a class="brand" href="#">TapTech</a>
+      <a class="brand" href="#" style="display:inline-flex; align-items:center; gap:10px;">
+        <img src="media/logo2.webp" alt="TapTech logo" height="52" style="display:block; mix-blend-mode:multiply;" />TapTech
+      </a>
       <nav>
         <a href="#demo">Demo</a>
+        <a href="#how">Process</a>
         <a href="#photos">Photos</a>
         <a href="#uses">Uses</a>
         <a href="#pricing">Pricing</a>
@@ -224,18 +469,21 @@
       </nav>
     </header>
 
-    <div class="hero">
-      <h1>Custom NFC Keychains</h1>
+    <div class="hero reveal">
+      <div class="hero-eyebrow">NFC Merch</div>
+      <h1>One tap.<br>Instant link.</h1>
       <p class="subtitle">
-        Tap the keychain to open any link instantly — perfect for club merch and small business advertising.
+        Custom NFC keychains that open any link the moment someone taps them — perfect for club merch and small business advertising.
       </p>
       <p class="subnote">
-        Custom logo design + NFC programming included. Starting at 25 units.
+        <strong>Design + NFC programming included.</strong> Starting at 25 units.
       </p>
     </div>
 
-    <section id="demo">
+    <section id="demo" class="reveal">
+      <div class="section-label">See it in action</div>
       <h2>Tap demo</h2>
+      <p class="section-note">Works on any NFC-enabled phone — no app needed.</p>
       <div class="video-wrap">
         <video controls playsinline autoplay muted loop>
           <source src="media/demo2.mp4" type="video/mp4" />
@@ -243,29 +491,30 @@
       </div>
     </section>
 
-    <section id="photos">
-      <h2>Past clients</h2>
-      <p class="section-note">Click an image to visit their site.</p>
+    <section id="photos" class="reveal">
+      <div class="section-label">Past clients</div>
+      <h2>Real orders</h2>
+      <p class="section-note">Linked photos open the client's site.</p>
       <div class="gallery">
         <div class="shot">
-          <img src="media/all.webp" alt="All keychains" loading="lazy" width="1528" height="1130" />
+          <img src="media/all.webp" alt="Full keychain collection" loading="lazy" width="1528" height="1130" />
           <div class="caption">Full collection</div>
         </div>
-        <div class="shot">
+        <div class="shot is-link">
           <a href="https://theprintedpieces.com" target="_blank" rel="noopener noreferrer">
             <img src="media/theprintedpieces.webp" alt="The Printed Pieces keychains" loading="lazy" width="1516" height="1040" />
           </a>
-          <div class="caption"><a href="https://theprintedpieces.com" target="_blank" rel="noopener noreferrer">The Printed Pieces</a></div>
+          <div class="caption"><a href="https://theprintedpieces.com" target="_blank" rel="noopener noreferrer">The Printed Pieces ↗</a></div>
         </div>
         <div class="shot">
           <img src="media/spotify.webp" alt="Spotify logo keychains" loading="lazy" width="1516" height="1040" />
           <div class="caption">Spotify logo keychains</div>
         </div>
-        <div class="shot">
+        <div class="shot is-link">
           <a href="https://theluminositylab.com" target="_blank" rel="noopener noreferrer">
             <img src="media/luminosity.webp" alt="Luminosity keychains" loading="lazy" width="1516" height="1040" />
           </a>
-          <div class="caption"><a href="https://theluminositylab.com" target="_blank" rel="noopener noreferrer">Luminosity</a></div>
+          <div class="caption"><a href="https://theluminositylab.com" target="_blank" rel="noopener noreferrer">Luminosity ↗</a></div>
         </div>
         <div class="shot">
           <img src="media/backpack.webp" alt="Keychain on backpack" loading="lazy" width="1928" height="1406" />
@@ -278,8 +527,38 @@
       </div>
     </section>
 
-    <section id="uses">
-      <h2>Use cases</h2>
+    <section id="how" class="reveal">
+      <div class="section-label">How it works</div>
+      <h2>From logo to keychain</h2>
+      <p class="section-note">Four simple steps, fully handled on my end.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Send your logo</div>
+          <div class="step-desc">Send your logo and the link you want it to open.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Design preview</div>
+          <div class="step-desc">I'll design it and send a preview. Revisions until you're happy.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">You approve</div>
+          <div class="step-desc">I order any materials needed and get to work.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-title">Delivery</div>
+          <div class="step-desc">Printed, programmed, and delivered in 1–3 weeks.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="uses" class="reveal">
+      <div class="section-label">Use cases</div>
+      <h2>Built for clubs &amp; small businesses</h2>
+      <p class="section-note" style="margin-bottom:18px;"></p>
       <div class="grid">
         <div class="card">
           <h3>Tabling Events</h3>
@@ -289,42 +568,41 @@
           <h3>Merch for Members</h3>
           <p>Let members rock the keychain with instant tap access to your club's resources, socials, or website.</p>
         </div>
+        <div class="card">
+          <h3>Small Businesses</h3>
+          <p>Attach to products, bags, or displays so customers can instantly reach your menu, booking, or store.</p>
+        </div>
       </div>
     </section>
 
-    <section id="pricing">
-      <h2>Pricing</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Quantity</th>
-            <th>Price each</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>25–49</td>
-            <td>$5.00</td>
-          </tr>
-          <tr>
-            <td>50–99</td>
-            <td>$3.50</td>
-          </tr>
-          <tr>
-            <td>100+</td>
-            <td>$2.50</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="font-size:13px; color:#666; margin-top:12px;">
-        Price may vary slightly based on materials, design complexity, or deadline. Orders outside Tempe campus may incur additional shipping fees.
-      </p>
+    <section id="pricing" class="reveal">
+      <div class="section-label">Pricing</div>
+      <h2>Simple, volume-based pricing</h2>
+      <p class="section-note">Design + NFC programming always included.</p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-qty">25 – 49 units</div>
+          <div class="price-amount">$7</div>
+          <div class="price-unit">per keychain</div>
+        </div>
+        <div class="price-card featured">
+          <div class="price-qty">50 – 99 units</div>
+          <div class="price-amount">$5</div>
+          <div class="price-unit">per keychain</div>
+        </div>
+        <div class="price-card">
+          <div class="price-qty">100+ units</div>
+          <div class="price-amount">$3</div>
+          <div class="price-unit">per keychain</div>
+        </div>
+      </div>
+      <p class="price-note">Price may vary slightly based on materials, design complexity, or deadline. Orders outside Tempe campus may incur additional shipping fees.</p>
     </section>
 
-    <footer id="contact">
+    <footer id="contact" class="reveal">
       <div>
-        <strong>Contact</strong><br />
-        Reach out to get started. I'll design the keychain based on your logo and handle all the NFC programming — just tell me your quantity and link.
+        <strong>Get started</strong><br />
+        Reach out and I'll design the keychain based on your logo and handle all the NFC programming — just tell me your quantity and link.
       </div>
       <div class="email">
         <a href="mailto:awpierc2@asu.edu?subject=NFC%20Keychains%20Inquiry">awpierc2@asu.edu</a>
@@ -332,5 +610,18 @@
     </footer>
 
   </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
