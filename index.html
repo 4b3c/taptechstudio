@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <title>TapTech — Custom NFC Keychains</title>
+  <title>TapTech | Custom NFC Keychains</title>
   <meta name="description" content="Custom NFC keychains for student clubs and events. Tap-to-link merch with your logo." />
   <style>
     :root {
@@ -141,25 +141,6 @@
     .hero {
       max-width: 680px;
       margin-bottom: 72px;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 18px;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      width: 20px;
-      height: 1.5px;
-      background: var(--accent);
     }
 
     h1 {
@@ -370,8 +351,6 @@
       transition: opacity 0.2s;
     }
 
-    .card:hover { border-color: #c4b5fd; transform: translateY(-3px); }
-    .card:hover::before { opacity: 1; }
 
     .card h3 {
       font-size: 15px;
@@ -461,23 +440,36 @@
       border-top: 1px solid var(--border);
       padding-top: 28px;
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
+      flex-direction: column;
+      gap: 12px;
       font-size: 14px;
       color: var(--muted);
     }
 
     footer strong { color: var(--text); }
 
-    .email a {
+    .email button {
       font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, monospace;
       color: var(--accent);
-      text-decoration: none;
       font-size: 14px;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
     }
 
-    .email a:hover { text-decoration: underline; }
+    .email button:hover { text-decoration: underline; }
+
+    .copy-toast {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .copy-toast.show { opacity: 1; }
 
     /* ── Scroll reveal ── */
     .reveal {
@@ -553,20 +545,19 @@
     </header>
 
     <div class="hero reveal">
-      <div class="hero-eyebrow">NFC Merch</div>
       <h1>One tap.<br>Instant link.</h1>
       <p class="subtitle">
-        Custom NFC keychains that open any link the moment someone taps them — perfect for club merch and small business advertising.
+        Custom NFC keychains that open any link the moment someone taps them. Perfect for club merch and small business advertising.
       </p>
       <p class="subnote">
-        <strong>Design + NFC programming included.</strong> Starting at 25 units.
+        <strong>Custom Design + NFC programming included with all orders.</strong>
       </p>
     </div>
 
     <section id="demo" class="reveal">
       <div class="section-label">See it in action</div>
       <h2>Tap demo</h2>
-      <p class="section-note">Works on any NFC-enabled phone — no app needed.</p>
+      <p class="section-note">Works on any NFC-enabled phone.</p>
       <div class="video-wrap">
         <video playsinline autoplay muted loop>
           <source src="media/demo2.mp4" type="video/mp4" />
@@ -581,7 +572,7 @@
       <div class="gallery">
         <div class="shot">
           <img src="media/all.webp" alt="Full keychain collection" loading="lazy" width="1528" height="1130" />
-          <div class="caption">Full collection</div>
+          <div class="caption">Past collection</div>
         </div>
         <div class="shot is-link">
           <a href="https://theprintedpieces.com" target="_blank" rel="noopener noreferrer">
@@ -591,7 +582,7 @@
         </div>
         <div class="shot">
           <img src="media/spotify.webp" alt="Spotify logo keychains" loading="lazy" width="1516" height="1040" />
-          <div class="caption">Spotify logo keychains — <a href="https://www.etsy.com/listing/1838364512/custom-nfc-keychain-spotify-songplaylist" target="_blank" rel="noopener noreferrer">buy ready-made on Etsy ↗</a></div>
+          <div class="caption"><a href="https://www.etsy.com/listing/1838364512/custom-nfc-keychain-spotify-songplaylist" target="_blank" rel="noopener noreferrer">Spotify on Etsy ↗</a></div>
         </div>
         <div class="shot is-link">
           <a href="https://theluminositylab.com" target="_blank" rel="noopener noreferrer">
@@ -617,23 +608,19 @@
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <div class="step-title">Send your logo</div>
-          <div class="step-desc">Send your logo and the link you want it to open.</div>
+          <div class="step-desc">Send your logo and I'll design your custom keychain.</div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div class="step-title">Design preview</div>
-          <div class="step-desc">I'll design it and send a preview. Revisions until you're happy.</div>
+          <div class="step-desc">Revisions until you're satisfied.</div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <div class="step-title">You approve</div>
-          <div class="step-desc">I order any materials needed and get to work.</div>
+          <div class="step-desc">I order any missing materials.</div>
         </div>
         <div class="step">
           <div class="step-num">4</div>
-          <div class="step-title">Delivery</div>
-          <div class="step-desc">Printed, programmed, and delivered in 1–3 weeks.</div>
+          <div class="step-desc">Printed, programmed, and delivered in 1-3 weeks.</div>
         </div>
       </div>
     </section>
@@ -664,31 +651,32 @@
       <p class="section-note">Design + NFC programming always included.</p>
       <div class="pricing-grid">
         <div class="price-card">
-          <div class="price-qty">25 – 49 units</div>
-          <div class="price-amount">$7</div>
+          <div class="price-qty">25 - 49 units</div>
+          <div class="price-amount">$6</div>
           <div class="price-unit">per keychain</div>
         </div>
         <div class="price-card featured">
-          <div class="price-qty">50 – 99 units</div>
-          <div class="price-amount">$5</div>
+          <div class="price-qty">50 - 99 units</div>
+          <div class="price-amount">$4</div>
           <div class="price-unit">per keychain</div>
         </div>
         <div class="price-card">
           <div class="price-qty">100+ units</div>
-          <div class="price-amount">$3</div>
+          <div class="price-amount">$2</div>
           <div class="price-unit">per keychain</div>
         </div>
       </div>
-      <p class="price-note">Price may vary slightly based on materials, design complexity, or deadline. Orders outside Tempe campus may incur additional shipping fees.</p>
+      <p class="price-note">Price may vary slightly based on color availability, complexity, or deadline. Orders outside Tempe campus may incur additional shipping fees.</p>
     </section>
 
     <footer id="contact" class="reveal">
       <div>
         <strong>Get started</strong><br />
-        Reach out and I'll design the keychain based on your logo and handle all the NFC programming — just tell me your quantity and link.
+        Reach out now and I'll design your custom keychain based on your logo and handle all the NFC programming.
       </div>
       <div class="email">
-        <a href="mailto:awpierc2@asu.edu?subject=NFC%20Keychains%20Inquiry">awpierc2@asu.edu</a>
+        <button onclick="copyEmail()">awpierc2@asu.edu</button>
+        <span class="copy-toast" id="copy-toast">Email copied to clipboard</span>
       </div>
     </footer>
 
@@ -723,6 +711,14 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function copyEmail() {
+      navigator.clipboard.writeText('awpierc2@asu.edu').then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    }
   </script>
 </body>
 </html>
