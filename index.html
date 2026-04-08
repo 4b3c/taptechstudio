@@ -365,6 +365,68 @@
     }
 
     /* ── Pricing ── */
+    .pricing-step {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .pricing-step-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .design-fee-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .design-fee-amount {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #0f0f0f;
+      white-space: nowrap;
+    }
+
+    .design-fee-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .design-fee-desc strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .pricing-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 4px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .pricing-divider::before,
+    .pricing-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -376,9 +438,8 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 24px 20px;
+      padding: 20px 16px;
       text-align: center;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
       position: relative;
       overflow: hidden;
     }
@@ -389,7 +450,7 @@
     }
 
     .price-card.featured::after {
-      content: 'Most popular';
+      content: 'Best value';
       position: absolute;
       top: 11px; right: 11px;
       font-size: 10px;
@@ -402,22 +463,14 @@
       border-radius: 20px;
     }
 
-    .price-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent);
-      box-shadow: 0 8px 24px rgba(109,40,217,0.1);
-    }
-
     .price-qty {
       font-size: 12px;
       color: var(--muted);
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .price-amount {
-      font-size: 38px;
+      font-size: 34px;
       font-weight: 800;
       letter-spacing: -1.5px;
       color: #0f0f0f;
@@ -426,7 +479,7 @@
     .price-unit {
       font-size: 12px;
       color: var(--muted);
-      margin-top: 4px;
+      margin-top: 2px;
     }
 
     .price-note {
@@ -438,20 +491,40 @@
     /* ── Footer ── */
     footer {
       border-top: 1px solid var(--border);
-      padding-top: 28px;
+      padding-top: 40px;
+      padding-bottom: 12px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
       font-size: 14px;
       color: var(--muted);
     }
 
-    footer strong { color: var(--text); }
+    .footer-heading {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .footer-sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .email {
+      text-align: center;
+      width: 100%;
+      position: relative;
+    }
 
     .email button {
       font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, monospace;
       color: var(--accent);
-      font-size: 14px;
+      font-size: 15px;
       background: none;
       border: none;
       padding: 0;
@@ -461,12 +534,12 @@
     .email button:hover { text-decoration: underline; }
 
     .copy-toast {
-      display: inline-block;
-      margin-left: 8px;
+      display: block;
       font-size: 12px;
       color: var(--muted);
       opacity: 0;
       transition: opacity 0.2s;
+      margin-top: 6px;
     }
 
     .copy-toast.show { opacity: 1; }
@@ -604,19 +677,19 @@
     <section id="how" class="reveal">
       <div class="section-label">How it works</div>
       <h2>From logo to keychain</h2>
-      <p class="section-note">Four simple steps, fully handled on my end.</p>
+      <p class="section-note">Simple process, handled on my end.</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <div class="step-desc">Send your logo and I'll design your custom keychain.</div>
+          <div class="step-desc">Send your logo. I convert it into a 3D printable design for a $45 design fee.</div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div class="step-desc">Revisions until you're satisfied.</div>
+          <div class="step-desc">Approve the design. Revisions until you're happy.</div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <div class="step-desc">I order any missing materials.</div>
+          <div class="step-desc">Place your order. Pay per unit based on quantity.</div>
         </div>
         <div class="step">
           <div class="step-num">4</div>
@@ -647,30 +720,48 @@
 
     <section id="pricing" class="reveal">
       <div class="section-label">Pricing</div>
-      <h2>Simple, volume-based pricing</h2>
-      <p class="section-note">Design + NFC programming always included.</p>
-      <div class="pricing-grid">
-        <div class="price-card">
-          <div class="price-amount">$50</div>
-          <div class="price-qty">Sample &nbsp;·&nbsp; 5 units</div>
-        </div>
-        <div class="price-card">
-          <div class="price-amount">$250</div>
-          <div class="price-qty">Starter &nbsp;·&nbsp; 50 units</div>
-        </div>
-        <div class="price-card featured">
-          <div class="price-amount">$600</div>
-          <div class="price-qty">Standard &nbsp;·&nbsp; 200 units</div>
+      <h2>Simple, transparent pricing</h2>
+
+      <div class="pricing-step">
+        <div class="pricing-step-label">Step 1 &nbsp;·&nbsp; First order only</div>
+        <div class="design-fee-card">
+          <div class="design-fee-amount">$45</div>
+          <div class="design-fee-desc">
+            <strong>Design fee</strong>
+            Your logo turned into a printable 3D design. Waived if you already have a file, ordered before, or pick one of my existing designs.
+          </div>
         </div>
       </div>
+
+      <div class="pricing-divider">then, per unit</div>
+
+      <div class="pricing-step">
+        <div class="pricing-step-label">Step 2 &nbsp;·&nbsp; Place your order</div>
+        <div class="pricing-grid">
+          <div class="price-card">
+            <div class="price-amount">$3</div>
+            <div class="price-unit">per keychain</div>
+            <div class="price-qty">under 100 units</div>
+          </div>
+          <div class="price-card">
+            <div class="price-amount">$2.50</div>
+            <div class="price-unit">per keychain</div>
+            <div class="price-qty">100 – 200 units</div>
+          </div>
+          <div class="price-card featured">
+            <div class="price-amount">$2</div>
+            <div class="price-unit">per keychain</div>
+            <div class="price-qty">200+ units</div>
+          </div>
+        </div>
+      </div>
+
       <p class="price-note">Custom quantities available on request. Prices may vary based on materials or deadline. Shipping fees may apply outside Tempe.</p>
     </section>
 
     <footer id="contact" class="reveal">
-      <div>
-        <strong>Get started</strong><br />
-        Reach out now and I'll design your custom keychain based on your logo and handle all the NFC programming.
-      </div>
+      <p class="footer-heading">Ready to order?</p>
+      <p class="footer-sub">Send your logo and I'll take it from there.</p>
       <div class="email">
         <button onclick="copyEmail()">awpierc2@asu.edu</button>
         <span class="copy-toast" id="copy-toast">Email copied to clipboard</span>
