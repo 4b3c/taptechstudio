@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>FAQ | TapTech Custom NFC Keychains</title>
+  <meta name="description" content="Common questions about TapTech NFC keychains — phone compatibility, order turnaround, minimum quantities, custom links, and more." />
+  <link rel="canonical" href="https://www.taptechstudio.com/faq.html" />
+  <meta property="og:title" content="FAQ | TapTech Custom NFC Keychains" />
+  <meta property="og:description" content="Common questions about TapTech NFC keychains — phone compatibility, order turnaround, minimum quantities, custom links, and more." />
+  <meta property="og:url" content="https://www.taptechstudio.com/faq.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.taptechstudio.com/media/all.webp" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: var(--surface);
+      border: none;
+      padding: 18px 20px;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: background 0.15s;
+      font-family: inherit;
+    }
+
+    .faq-question:hover { background: #f3f0ff; }
+
+    .faq-item.open .faq-question { background: #f3f0ff; }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    .faq-answer {
+      display: none;
+      padding: 0 20px 18px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      background: #f3f0ff;
+      border-top: 1px solid #e9e3ff;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
+    .faq-answer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .faq-answer a:hover { text-decoration: underline; }
+
+    .page-hero {
+      max-width: 680px;
+      margin-bottom: 56px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="faq.html" onclick="closeMenu()">FAQ</a>
+  </nav>
+
+  <div class="container">
+
+    <header>
+      <a class="brand" href="index.html" style="display:inline-flex; align-items:center; gap:10px;">
+        <img src="media/logo2.webp" alt="TapTech Studio logo" height="52" style="display:block; mix-blend-mode:multiply;" />TapTech
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="faq.html" class="active">FAQ</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <div class="page-hero reveal">
+      <div class="section-label">FAQ</div>
+      <h1>Common questions.</h1>
+      <p class="subtitle">Everything you need to know before placing an order.</p>
+    </div>
+
+    <section class="reveal">
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What phones can tap the keychains?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Any NFC-enabled smartphone — which is essentially every iPhone since the iPhone 7 and most Android phones made in the last several years. No app needed. Users just tap and the link opens instantly.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I change the link after the keychains are programmed?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            It depends on the type of order. There are two setups:
+            <br><br>
+            <strong>Individual keychains</strong> — each recipient gets their own unique link they can update themselves anytime, as long as they saved their passphrase. Great for employees or members who want to point their keychain to a personal LinkedIn or portfolio.
+            <br><br>
+            <strong>Batch keychains</strong> — all keychains in the order point to the same URL (like a company site or event page). Since changing the destination would affect hundreds of tags at once, those updates need to go through us. Reach out and we'll take care of it.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How long does an order take?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            It scales with quantity. A 100-unit order is typically done in about 5 days after design approval. A 1,000-unit order is closer to 3 weeks. If you're using specialty colors, add roughly a week on top of that.
+            <br><br>
+            If you have a hard deadline, reach out early — express turnaround is available at an additional cost.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What's the minimum order quantity?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            The standard minimum is 100 keychains at $3 each. Pricing drops at 500 and 1,000 units — see the full breakdown on the <a href="index.html#pricing">pricing section</a>.
+            <br><br>
+            Smaller orders are possible for special cases, but the per-unit cost will be significantly higher. Reach out if you need something outside the standard range.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can each keychain link to a different URL?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Yes. We offer individually configurable keychains where each recipient can set their own link — useful for employees who want to share a personal LinkedIn or portfolio. Or all keychains in a batch can point to the same URL, like a company website or event page.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you ship outside Arizona?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Yes, we ship anywhere in the US. Shipping outside Arizona may affect the final price — reach out for a quote if you're outside the state.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What file format do I need for my logo?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            A vector file (SVG, AI, or EPS) works best and produces the cleanest result. A high-resolution PNG works too. If you're not sure what you have, just send it over and we'll let you know.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <p class="footer-heading">Still have questions?</p>
+      <p class="footer-sub">Just reach out — we'll get back to you quickly.</p>
+      <div class="email">
+        <button onclick="copyEmail()">taptech.contact@gmail.com</button>
+        <span class="copy-toast" id="copy-toast">Email copied to clipboard</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      menuOverlay.classList.remove('open');
+    }
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      menuOverlay.classList.toggle('open', isOpen);
+    });
+
+    menuOverlay.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function copyEmail() {
+      navigator.clipboard.writeText('taptech.contact@gmail.com').then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    }
+  </script>
+</body>
+</html>
