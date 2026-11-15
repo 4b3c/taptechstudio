@@ -245,3 +245,6 @@ footer {
   h1 { font-size: 30px; }
   nav a { margin-left: 14px; font-size: 13px; }
 }
+
+.legal-links { margin-top: 28px; font-size: 13px; opacity: 0.6; }
+.legal-links a { color: inherit; }

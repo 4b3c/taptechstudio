@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Privacy Policy | TapTech Studio</title>
+  <meta name="description" content="What TapTech Studio collects when you order, own or tap a keychain, and what it does with it." />
+  <link rel="canonical" href="https://www.taptechstudio.com/privacy.html" />
+  <meta property="og:title" content="Privacy Policy | TapTech Studio" />
+  <meta property="og:description" content="What TapTech Studio collects when you order, own or tap a keychain, and what it does with it." />
+  <meta property="og:url" content="https://www.taptechstudio.com/privacy.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.taptechstudio.com/media/all.webp" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .legal { max-width: 720px; }
+    .legal h2 { font-size: 22px; margin: 36px 0 10px; }
+    .legal p, .legal li { line-height: 1.65; margin-bottom: 12px; }
+    .legal ul { padding-left: 22px; margin-bottom: 12px; }
+    .legal a { color: inherit; }
+  </style>
+</head>
+
+<body>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="faq.html" onclick="closeMenu()">FAQ</a>
+  </nav>
+
+  <div class="container">
+
+    <header>
+      <a class="brand" href="index.html" style="display:inline-flex; align-items:center; gap:10px;">
+        <img src="media/logo2.webp" alt="TapTech Studio logo" height="52" style="display:block; mix-blend-mode:multiply;" />TapTech
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <div class="page-hero reveal">
+      <div class="section-label">Privacy</div>
+      <h1>Privacy policy.</h1>
+      <p class="subtitle">What we collect, and what we do with it.</p>
+    </div>
+
+    <section class="reveal legal">
+      <p>TapTech Studio is run by Abram Pierce, a sole proprietor in Arizona. This page says what we
+      collect when you order from us, own a TapTech keychain, or tap one, and what we do with it.</p>
+
+      <h2>When you order</h2>
+      <p>We keep what you send us to fill the order: your name, email, organization, shipping address,
+      your logo or design files, and the messages about the order. We use them to make, ship and
+      invoice it, and to answer you later. We don't sell them or use them for anything else.</p>
+      <p>Card payments go through <a href="https://stripe.com/privacy">Stripe</a>. We never see or store
+      your card number; Stripe tells us the amount, the date and the name on the payment. Orders placed
+      on Etsy are covered by Etsy's privacy policy as well as this one.</p>
+
+      <h2>When someone taps a keychain</h2>
+      <p>A tap opens app.taptechstudio.com, which sends the phone on to the keychain's link. For each tap
+      we record:</p>
+      <ul>
+        <li>the time, and which keychain was tapped;</li>
+        <li>the phone's browser and operating system, as its browser reports them;</li>
+        <li>an approximate location (country, region and city) worked out by our network provider,
+        Cloudflare, from the connection;</li>
+        <li>the page that sent the request, if the browser reports one.</li>
+      </ul>
+      <p>We don't store the tapper's IP address, and we don't set cookies or run ads or third-party
+      trackers on a tap. The keychain's owner sees tap counts, times and device types for their own
+      keychains, so they can tell how they're being used.</p>
+
+      <h2>Keychain owners</h2>
+      <p>If you manage your keychains' links, we store the links you set, any scheduled link changes, and
+      a password for your dashboard. Logging in sets one cookie that keeps you signed in for 30 days.
+      It isn't used for anything else.</p>
+
+      <h2>This website</h2>
+      <p>www.taptechstudio.com is a static site hosted on GitHub Pages behind Cloudflare. It has no
+      analytics, no ads and no cookies of its own. GitHub and Cloudflare keep standard server logs, as
+      any web host does.</p>
+
+      <h2>Who else handles it</h2>
+      <p>Our data is stored with Supabase (the database behind the tap service) and passes through
+      Cloudflare, Stripe and our email provider. Each only gets what it needs to do its job. We share
+      information with anyone else only if the law requires it.</p>
+
+      <h2>How long we keep it, and your choices</h2>
+      <p>Order records are kept as long as tax and accounting rules require. Tap records are kept while
+      the keychain is in service. Email us to see, correct or delete what we have about you, and we'll
+      do it unless we're required to keep it.</p>
+
+      <h2>Changes and contact</h2>
+      <p>If this policy changes, the new version goes on this page with a new date. Questions go to
+      <a href="mailto:awpierc2@asu.edu">awpierc2@asu.edu</a>.</p>
+      <p><em>Last updated November 15, 2026.</em></p>
+    </section>
+
+    <footer class="reveal">
+      <p class="footer-heading">Still have questions?</p>
+      <p class="footer-sub">Just reach out — we'll get back to you quickly.</p>
+      <div class="email">
+        <button onclick="copyEmail()">awpierc2@asu.edu</button>
+        <span class="copy-toast" id="copy-toast">Email copied to clipboard</span>
+      </div>
+      <p class="legal-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+    </footer>
+
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      menuOverlay.classList.remove('open');
+    }
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      menuOverlay.classList.toggle('open', isOpen);
+    });
+
+    menuOverlay.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function copyEmail() {
+      navigator.clipboard.writeText('awpierc2@asu.edu').then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    }
+  </script>
+</body>
+</html>
