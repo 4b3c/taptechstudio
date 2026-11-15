@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Terms of Service | TapTech Studio</title>
+  <meta name="description" content="The terms for TapTech Studio orders and its NFC tap service." />
+  <link rel="canonical" href="https://www.taptechstudio.com/terms.html" />
+  <meta property="og:title" content="Terms of Service | TapTech Studio" />
+  <meta property="og:description" content="The terms for TapTech Studio orders and its NFC tap service." />
+  <meta property="og:url" content="https://www.taptechstudio.com/terms.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.taptechstudio.com/media/all.webp" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .legal { max-width: 720px; }
+    .legal h2 { font-size: 22px; margin: 36px 0 10px; }
+    .legal p, .legal li { line-height: 1.65; margin-bottom: 12px; }
+    .legal ul { padding-left: 22px; margin-bottom: 12px; }
+    .legal a { color: inherit; }
+  </style>
+</head>
+
+<body>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="faq.html" onclick="closeMenu()">FAQ</a>
+  </nav>
+
+  <div class="container">
+
+    <header>
+      <a class="brand" href="index.html" style="display:inline-flex; align-items:center; gap:10px;">
+        <img src="media/logo2.webp" alt="TapTech Studio logo" height="52" style="display:block; mix-blend-mode:multiply;" />TapTech
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <div class="page-hero reveal">
+      <div class="section-label">Terms</div>
+      <h1>Terms of service.</h1>
+      <p class="subtitle">The rules for orders and the tap service.</p>
+    </div>
+
+    <section class="reveal legal">
+      <p>These terms cover orders from TapTech Studio and use of its tap service. TapTech Studio is run
+      by Abram Pierce, a sole proprietor in Arizona ("we"). By placing an order or using the service, you
+      agree to them.</p>
+
+      <h2>Orders and quotes</h2>
+      <p>Every keychain is made to order. The price, quantity and delivery date are the ones in your
+      quote or invoice; if those differ from this site, the quote or invoice wins. Lead times are
+      estimates. We'll tell you as soon as we know an order will be late.</p>
+      <p>Before printing we send you a proof. Printing starts once you approve it, and what you approved
+      is what we make. Because 3D printing is a physical process, small variations in colour, finish
+      and detail between pieces are normal.</p>
+
+      <h2>Your designs</h2>
+      <p>You must have the right to use any logo, artwork or text you send us. You keep ownership of it;
+      you let us use it to make your order and, if you agree, to show the finished product. We may turn
+      down a design we think infringes someone else's rights or is unlawful.</p>
+
+      <h2>Payment</h2>
+      <p>Payment is due as stated on your invoice. Card payments are processed by Stripe. Etsy orders are
+      also subject to Etsy's terms.</p>
+
+      <h2>Problems, returns and refunds</h2>
+      <p>Custom pieces can't be returned because you changed your mind. If something arrives damaged,
+      defective, or not matching the proof you approved, email us within 14 days of delivery with a photo
+      and we'll replace it or refund it.</p>
+
+      <h2>The tap service</h2>
+      <p>Each keychain's chip holds a link to app.taptechstudio.com, which forwards to the link you've
+      chosen. Owners can change where their keychains point. You may not point them at anything illegal,
+      malicious or deceptive (malware, phishing, scams), and we may disable a link that does.</p>
+      <p>We work to keep the service running but can't promise it will never go down. If we ever have to
+      shut it down for good, we'll post notice on this site at least 90 days before.</p>
+
+      <h2>Liability</h2>
+      <p>The keychains and the service are provided as is. To the extent the law allows, our total
+      liability for any order is limited to what you paid for it, and we aren't liable for indirect or
+      consequential losses.</p>
+
+      <h2>General</h2>
+      <p>These terms are governed by the laws of Arizona. If they change, the new version goes on this
+      page with a new date; orders already placed keep the terms they were placed under. Questions go to
+      <a href="mailto:awpierc2@asu.edu">awpierc2@asu.edu</a>.</p>
+      <p><em>Last updated November 15, 2026.</em></p>
+    </section>
+
+    <footer class="reveal">
+      <p class="footer-heading">Still have questions?</p>
+      <p class="footer-sub">Just reach out — we'll get back to you quickly.</p>
+      <div class="email">
+        <button onclick="copyEmail()">awpierc2@asu.edu</button>
+        <span class="copy-toast" id="copy-toast">Email copied to clipboard</span>
+      </div>
+      <p class="legal-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+    </footer>
+
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      menuOverlay.classList.remove('open');
+    }
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      menuOverlay.classList.toggle('open', isOpen);
+    });
+
+    menuOverlay.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function copyEmail() {
+      navigator.clipboard.writeText('awpierc2@asu.edu').then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    }
+  </script>
+</body>
+</html>
