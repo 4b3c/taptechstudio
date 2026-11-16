@@ -3,7 +3,8 @@
   Thank-you page template. taptech-tools' thanks/create_thanks.py fills it in and writes
   thanks/<slug>/index.html; nothing links here and robots are told not to index it.
   One screen, no scrolling, on any phone. Keep it that way: add nothing that needs a scroll.
-  Placeholders: {{FIRST_NAME}} {{ORG}} {{MESSAGE}} {{SIGNED}}.
+  Placeholders: {{FIRST_NAME}} {{ORG}} {{MESSAGE}} {{SIGNED}} {{STATS_URL}} (the owner's
+  view-only stats link, from app.taptechstudio.com/admin/owners).
   An IF:KEY ... /IF:KEY comment pair drops what it wraps when KEY is empty.
 -->
 <html lang="en">
@@ -57,8 +58,8 @@
     <!-- IF:MESSAGE -->
     <p class="note">{{MESSAGE}}<!-- IF:SIGNED --><em>{{SIGNED}}</em><!-- /IF:SIGNED --></p>
     <!-- /IF:MESSAGE -->
-    <a class="btn" href="https://app.taptechstudio.com/dashboard/login">See your taps →</a>
-    <p class="small">Password by email · <a href="mailto:awpierc2@asu.edu">awpierc2@asu.edu</a></p>
+    <a class="btn" href="{{STATS_URL}}">See your taps →</a>
+    <p class="small">Questions? <a href="mailto:awpierc2@asu.edu">awpierc2@asu.edu</a></p>
   </main>
 </body>
 </html>
